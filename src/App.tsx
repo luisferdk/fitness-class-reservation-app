@@ -1,35 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import CategoryList from './screens/CategoryList'
+import ClassList from './screens/ClassList'
+import Confirmation from './screens/Confirmation'
+import Home from './screens/Home'
+import Login from './screens/Login'
+import Register from './screens/Register'
+import Splash from './screens/Splash'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className='min-h-screen max-w-[420px] mx-auto'>
+      <Routes>
+        <Route path='/' element={<Splash />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/categories' element={<CategoryList />} />
+        <Route path='/classes/:type' element={<ClassList />} />
+        <Route path='/confirmation' element={<Confirmation />} />
+        <Route path='*' element={<Navigate to='/' />} />
+      </Routes>
+    </div>
   )
 }
-
-export default App
