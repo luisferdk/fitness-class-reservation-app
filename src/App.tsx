@@ -1,11 +1,11 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
-import CategoryList from './screens/CategoryList'
-import ClassList from './screens/ClassList'
-import Confirmation from './screens/Confirmation'
-import Home from './screens/Home'
-import Login from './screens/Login'
-import Register from './screens/Register'
-import Splash from './screens/Splash'
+import { Navigate, Route, Routes } from 'react-router-dom';
+import CategoryList from './screens/CategoryList';
+import ClassList from './screens/ClassList';
+import Confirmation from './screens/Confirmation';
+import Home from './screens/Home';
+import Login from './screens/Login';
+import Register from './screens/Register';
+import Splash from './screens/Splash';
 
 export default function App() {
   return (
@@ -21,5 +21,5 @@ export default function App() {
         <Route path='*' element={<Navigate to='/' />} />
       </Routes>
     </div>
-  )
+  );
 }
