@@ -1,27 +1,34 @@
 # Fitness Class Reservation App
 
+## 🌐 Live Demo
+
+**[View Live Application](https://luisferdk.github.io/fitness-class-reservation-app/)**
+
 ## Project Description
 
 Fitness Class Reservation App is a modern fitness class reservation application built with React, Vite, and TypeScript. It provides a user-friendly interface for browsing fitness classes, managing reservations, and a seamless user experience with a focus on performance and maintainability.
 
 ## Features
 
-- User Authentication (Login, Register)
-- Browse available fitness classes by category
-- View class details
-- Reserve and cancel classes
-- Confirmation screen for reservations
-- Weekly goal tracking
-- Responsive design
+- 🎯 **User Authentication** (Login, Register)
+- 🏋️ **Browse Classes** by category (Crossfit, Boxeo, Pilates)
+- 📅 **Date Selection** with interactive date bar
+- 📊 **Weekly Goal Tracking** with progress visualization
+- ✅ **Reservation Confirmation** with confetti animation
+- 📱 **Responsive Design** optimized for mobile
+- 🎨 **Modern UI** with Tailwind CSS
+- ⚡ **Fast Performance** with Vite build tool
 
 ## Technologies Used
 
-- **Frontend:** React.js
-- **Build Tool:** Vite
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Routing:** React Router DOM
+- **Frontend:** React.js 18
+- **Build Tool:** Vite 7
+- **Language:** TypeScript 5
+- **Styling:** Tailwind CSS 3
+- **Routing:** React Router DOM 6
+- **Icons:** React Icons 5
 - **Animations:** Canvas Confetti
+- **Deployment:** GitHub Pages
 
 ## Installation
 
@@ -68,6 +75,32 @@ npm run build
 
 This command bundles React in production mode and optimizes the build for the best performance.
 
+### Preview Production Build
+
+To preview the production build locally:
+
+```bash
+npm run preview:dist
+```
+
+This will serve the built application from the `dist` folder, simulating the GitHub Pages deployment.
+
+## Deployment
+
+The application is automatically deployed to GitHub Pages when changes are pushed to the `main` branch. The deployment process:
+
+1. **Builds** the application using Vite
+2. **Deploys** to GitHub Pages
+3. **Available** at: [https://luisferdk.github.io/fitness-class-reservation-app/](https://luisferdk.github.io/fitness-class-reservation-app/)
+
+### Manual Deployment
+
+If you need to deploy manually:
+
+1. Build the project: `npm run build`
+2. Push to main branch: `git push origin main`
+3. GitHub Actions will handle the deployment automatically
+
 ## Project Structure
 
 The project follows a standard React application structure:
@@ -112,3 +145,21 @@ You can import modules using the `@/` alias (configured in `vite.config.ts` and 
 ```typescript
 import { Header } from '@/components/Header';
 ```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Contact
+
+Luis Fernando - [@luisferdk](https://github.com/luisferdk)
+
+Project Link: [https://github.com/luisferdk/fitness-class-reservation-app](https://github.com/luisferdk/fitness-class-reservation-app)
