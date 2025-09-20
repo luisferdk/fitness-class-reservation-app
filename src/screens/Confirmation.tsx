@@ -1,6 +1,5 @@
 import ConfettiBurst from '@/components/ConfettiBurst';
 import { formatTime } from '@/components/utils';
-import { useState } from 'react';
 import { GoCheckCircleFill } from 'react-icons/go';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -12,7 +11,7 @@ export default function Confirmation() {
   const state = (loc.state ?? {}) as State;
   const time = state.time ?? '07:00';
   const coach = state.coach ?? 'Javier R.';
-  const [play, setPlay] = useState(true);
+  const play = true;
 
   return (
     <div className='min-h-screen p-6 flex flex-col items-center'>

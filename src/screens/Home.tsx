@@ -1,12 +1,10 @@
 import DateBar from '@/components/DateBar';
 import Header from '@/components/Header';
 import WeeklyGoal from '@/components/WeeklyGoal';
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
   const nav = useNavigate();
-  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
 
   const cards = [
     { type: 'crossfit', label: 'Crossfit', count: 5, bg: 'bg-amber-50', emoji: '🏋️' },
@@ -14,19 +12,13 @@ export default function Home() {
     { type: 'pilates', label: 'Pilates', count: 2, bg: 'bg-teal-50', emoji: '🧘' },
   ] as const;
 
-  /**
-   * Handle date selection from DateBar
-   */
-  const handleDateSelect = (date: Date) => {
-    setSelectedDate(date);
-    console.log('Fecha seleccionada:', date.toLocaleDateString('es-ES'));
-  };
+  
 
   return (
     <div>
       <Header />
       <WeeklyGoal current={0} total={5} />
-      <DateBar onDateSelect={handleDateSelect} />
+      <DateBar />
       <div className='px-5 mt-4'>
         <h2 className='text-xl font-extrabold'>Clases</h2>
         <div className='space-y-4 mt-2'>

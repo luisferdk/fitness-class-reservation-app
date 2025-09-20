@@ -7,7 +7,9 @@ export default function Splash() {
   return (
     <div className='h-screen flex flex-col items-center justify-center gap-6 p-6'>
       <p className='text-lg text-gray-500'>Bienvenido a</p>
-      <h1 className='text-4xl font-extrabold text-primary'>ReservaClass</h1>
+      <h1 className='text-3xl font-extrabold text-primary text-center'>
+        Fitness Class Reservation
+      </h1>
       <div className='w-full max-w-sm space-y-3'>
         <button onClick={() => nav('/home')} className='btn btn-outline w-full gap-4'>
           <FcGoogle />

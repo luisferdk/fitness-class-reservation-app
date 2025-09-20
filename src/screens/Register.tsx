@@ -14,7 +14,7 @@ export default function Register() {
       </button>
       <h1 className='text-3xl font-extrabold mt-2'>Register</h1>
       <p className='text-gray-500 mt-2'>
-        ¡Crea una cuenta para acceder a <b>ReservaClass</b>!
+        ¡Crea una cuenta para acceder a <b>Fitness Class Reservation</b>!
       </p>
 
       <form className='mt-8 space-y-5' onSubmit={onSubmit}>

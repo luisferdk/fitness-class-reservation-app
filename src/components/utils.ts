@@ -20,9 +20,9 @@ export const classesByType: Record<string, ClassItem[]> = {
     { id: 4, time: '17:00', coach: 'Esther Howard', spots: 3 },
     { id: 5, time: '18:00', coach: 'Jenny Wilson', spots: 0 },
   ],
-  boxeo: [{ id: 6, time: '10:00', coach: 'Luis F.', spots: 1 }],
+  boxeo: [{ id: 6, time: '10:00', coach: 'Julian A.', spots: 1 }],
   pilates: [
-    { id: 7, time: '11:00', coach: 'Ney G.', spots: 2 },
-    { id: 8, time: '16:00', coach: 'Ney G.', spots: 4 },
+    { id: 7, time: '11:00', coach: 'Maria R.', spots: 2 },
+    { id: 8, time: '16:00', coach: 'Maria R.', spots: 4 },
   ],
 };

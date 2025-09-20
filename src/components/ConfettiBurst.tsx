@@ -1,11 +1,8 @@
-// src/components/ConfettiBurst.tsx
 import confetti, { CreateTypes } from 'canvas-confetti';
 import { useEffect, useRef } from 'react';
 
 type Props = {
-  /** si true dispara solo al montar */
   autoFire?: boolean;
-  /** duración total de la ráfaga en ms */
   duration?: number;
 };
 
@@ -13,15 +10,16 @@ export default function ConfettiBurst({ autoFire = true, duration = 1200 }: Prop
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const confettiRef = useRef<CreateTypes | null>(null);
   useEffect(() => {
-    if (!canvasRef.current) return;
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
-    const myConfetti = confetti.create(canvasRef.current, {
-      resize: true, // adapta al viewport
-      useWorker: false, // deshabilitado para evitar el error de transferControlToOffscreen
+    const myConfetti = confetti.create(canvas, {
+      resize: true,
+      useWorker: false,
     });
     confettiRef.current = myConfetti;
 
-    let raf = 0;
+    let animationFrameId = 0;
     let start: number | null = null;
 
     const shoot = (t: number) => {
@@ -29,7 +27,6 @@ export default function ConfettiBurst({ autoFire = true, duration = 1200 }: Prop
       const elapsed = t - start;
       const progress = elapsed / duration;
 
-      // 2 chorros laterales + partículas sueltas
       myConfetti({
         particleCount: 2,
         angle: 60,
@@ -57,22 +54,20 @@ export default function ConfettiBurst({ autoFire = true, duration = 1200 }: Prop
       });
 
       if (progress < 1) {
-        raf = requestAnimationFrame(shoot);
+        animationFrameId = requestAnimationFrame(shoot);
       }
     };
 
-    if (autoFire) raf = requestAnimationFrame(shoot);
+    if (autoFire) animationFrameId = requestAnimationFrame(shoot);
 
     return () => {
-      cancelAnimationFrame(raf);
-      // limpiar canvas y resetear confetti
-      if (canvasRef.current) {
-        const ctx = canvasRef.current.getContext('2d');
+      cancelAnimationFrame(animationFrameId);
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
         if (ctx) {
-          ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
         }
       }
-      // resetear la referencia de confetti
       confettiRef.current = null;
     };
   }, [autoFire, duration]);
