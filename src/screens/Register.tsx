@@ -1,6 +1,6 @@
-import { useNavigate } from 'react-router-dom';
 import { FormEvent } from 'react';
-
+import { FaArrowLeftLong } from 'react-icons/fa6';
+import { useNavigate } from 'react-router-dom';
 export default function Register() {
   const nav = useNavigate();
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -10,7 +10,7 @@ export default function Register() {
   return (
     <div className='min-h-screen p-5'>
       <button onClick={() => history.back()} className='p-2 -ml-2' aria-label='Volver'>
-        ←
+        <FaArrowLeftLong />
       </button>
       <h1 className='text-3xl font-extrabold mt-2'>Register</h1>
       <p className='text-gray-500 mt-2'>

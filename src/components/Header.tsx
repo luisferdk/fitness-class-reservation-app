@@ -1,3 +1,6 @@
+import { FaArrowLeftLong } from 'react-icons/fa6';
+import { LuUserRound } from 'react-icons/lu';
+
 type Props = { title?: string; showBack?: boolean };
 
 export default function Header({ title = 'Hola, Ney 👋', showBack = false }: Props) {
@@ -9,17 +12,14 @@ export default function Header({ title = 'Hola, Ney 👋', showBack = false }: P
           className='p-2 rounded-xl hover:bg-gray-100'
           aria-label='Volver'
         >
-          ←
+          <FaArrowLeftLong />
         </button>
       ) : (
         <div className='w-6' />
       )}
       <h1 className='text-2xl font-extrabold flex-1'>{title}</h1>
-      <div
-        className='w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center border'
-        aria-hidden
-      >
-        <span className='text-xl'>👤</span>
+      <div className='w-8 h-8 text-lg rounded-full bg-white flex items-center justify-center border'>
+        <LuUserRound />
       </div>
     </div>
   );

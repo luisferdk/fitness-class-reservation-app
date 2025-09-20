@@ -1,5 +1,8 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import ConfettiBurst from '@/components/ConfettiBurst';
 import { formatTime } from '@/components/utils';
+import { useState } from 'react';
+import { GoCheckCircleFill } from 'react-icons/go';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 type State = { time?: string; coach?: string };
 
@@ -9,15 +12,16 @@ export default function Confirmation() {
   const state = (loc.state ?? {}) as State;
   const time = state.time ?? '07:00';
   const coach = state.coach ?? 'Javier R.';
+  const [play, setPlay] = useState(true);
 
   return (
     <div className='min-h-screen p-6 flex flex-col items-center'>
-      <div className='h-40 w-full bg-[radial-gradient(circle_at_20%_20%,#FCE7F3_0,transparent_40%),radial-gradient(circle_at_80%_10%,#EDE9FE_0,transparent_35%),radial-gradient(circle_at_30%_80%,#DCFCE7_0,transparent_30%)] rounded-3xl mb-6'></div>
-      <h1 className='text-4xl font-extrabold text-primary text-center'>¡Todo listo!</h1>
+      {play && <ConfettiBurst autoFire duration={1300} />}
+      <GoCheckCircleFill className='text-primary text-[80px]' />
+      <h1 className='text-4xl font-extrabold text-primary text-center mt-4'>¡Todo listo!</h1>
       <p className='text-center text-gray-600 mt-2'>
         Tu clase de está confirmada.
-        <br />
-        ¡A darlo todo!
+        <br /> ¡A darlo todo!
       </p>
 
       <div className='w-full mt-8 bg-primaryLight rounded-3xl p-4'>
@@ -25,7 +29,7 @@ export default function Confirmation() {
         <p className='text-center text-sm text-gray-600'>Coach: {coach}</p>
       </div>
 
-      <button onClick={() => nav('/home')} className='btn btn-primary w-full mt-10'>
+      <button onClick={() => nav('/home')} className='btn btn-outline mt-8'>
         Volver al inicio
       </button>
     </div>

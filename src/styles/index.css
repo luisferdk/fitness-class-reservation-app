@@ -12,7 +12,7 @@
 
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center px-5 py-3 rounded-2xl font-semibold shadow-soft active:scale-[0.99];
+    @apply inline-flex items-center justify-center px-5 py-2 rounded-full font-semibold shadow-soft active:scale-[0.99];
   }
   .btn-primary {
     @apply bg-primary text-white;
@@ -26,4 +26,16 @@
   .chip {
     @apply text-xs px-3 py-1 rounded-xl font-semibold;
   }
+}
+/* Custom scrollbar styles for horizontal scroll */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 2px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  @apply bg-primary h-[1px] rounded-sm;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #e5e7eb;
+  border-radius: 2px;
+  height: 1px;
 }

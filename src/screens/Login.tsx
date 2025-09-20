@@ -1,5 +1,6 @@
-import { useNavigate } from 'react-router-dom';
 import { FormEvent } from 'react';
+import { FaArrowLeftLong } from 'react-icons/fa6';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const nav = useNavigate();
@@ -10,7 +11,7 @@ export default function Login() {
   return (
     <div className='min-h-screen p-5'>
       <button onClick={() => history.back()} className='p-2 -ml-2' aria-label='Volver'>
-        ←
+        <FaArrowLeftLong />
       </button>
       <h1 className='text-3xl font-extrabold mt-2'>Bienvenido de nuevo 👋</h1>
       <p className='text-gray-500 mt-2'>Agenda tu próxima clase en segundos</p>
